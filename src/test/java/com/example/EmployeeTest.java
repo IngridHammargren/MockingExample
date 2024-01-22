@@ -20,6 +20,15 @@ class EmployeeTest {
         assertThat(result).isEqualTo("123");
     }
 
+    @Test
+    @DisplayName("Control that setID returns right ID")
+    void controlThatSetIdReturnsRightId() {
+        employee.setId("221");
+        var result =employee.getId();
+        assertThat(result).isEqualTo("221");
+        
+    }
+
 
         
 
