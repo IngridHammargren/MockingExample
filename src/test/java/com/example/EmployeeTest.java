@@ -45,6 +45,28 @@ class EmployeeTest {
         assertThat(result).isEqualTo(35000);
     }
 
+    @Test
+    @DisplayName("check if the employee got paid")
+    void checkIfTheEmployeeGotPaid() {
+        employee.setPaid(true);
+        boolean result = employee.isPaid();
+        assertThat(result).isTrue();
+
+    }
+    @Test
+    @DisplayName("check if employee not got paid")
+    void controlThatGetPaidReturnsRightPaid() {
+        boolean result = employee.isPaid();
+        assertThat(result).isFalse();
+
+    }
+
+
+
+
+
+
+
 
         
 
