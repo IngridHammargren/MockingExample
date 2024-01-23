@@ -29,6 +29,22 @@ class EmployeeTest {
         
     }
 
+    @Test
+    @DisplayName("Control that getSalary returns right salary")
+    void controlThatGetSalaryReturnsRightSalary() {
+        var result = employee.getSalary();
+        assertThat(result).isEqualTo(26000);
+        
+    }
+
+    @Test
+    @DisplayName("Control that setSalary returns right salary")
+    void controlThatSetSalaryReturnsRightSalary() {
+        employee.setSalary(35000);
+        var result = employee.getSalary();
+        assertThat(result).isEqualTo(35000);
+    }
+
 
         
 
