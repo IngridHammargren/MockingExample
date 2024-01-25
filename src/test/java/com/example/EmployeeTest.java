@@ -64,7 +64,6 @@ class EmployeeTest {
     @Test
     @DisplayName("get information about the employee")
     void getInformationAboutTheEmployee() {
-        //Employee employee = new Employee("123", 26000);
         String result = employee.toString();
         assertThat(result).isEqualTo("Employee [id=123, salary=26000.0]");
     }

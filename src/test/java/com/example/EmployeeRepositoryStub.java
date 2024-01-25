@@ -9,7 +9,13 @@ public class EmployeeRepositoryStub implements EmployeeRepository {
 
     @Override
     public List<Employee> findAll() {
-        return List.of(new Employee("1", 40000));
+        {
+            Employee employee1 = new Employee("111", 37000);
+            Employee employee2 = new Employee("222", 39000);
+
+            return List.of(employee1, employee2);
+        }
+
     }
 
     @Override
