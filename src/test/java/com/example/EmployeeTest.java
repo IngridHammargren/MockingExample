@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.*;
 class EmployeeTest {
@@ -14,11 +15,19 @@ class EmployeeTest {
     void init() { employee = new Employee("123", 26000); }
 
     @Test
-    @DisplayName("Control that getID returns right ID ")
-    void controlThatGetIdReturnsRightId() {
-        var result = employee.getId();
-        assertThat(result).isEqualTo("123");
+    @DisplayName("test Getters with default values from constructor")
+    void testGettersWithDefaultValuesFromConstructor() {
+        var idResult = employee.getId();
+        var salaryResult = employee.getSalary();
+        var isPaidResult = employee.isPaid();
+
+        assertThat(idResult).isEqualTo("123");
+        assertThat(salaryResult).isEqualTo(26000);
+        assertThat(isPaidResult).isFalse();
+
     }
+
+
 
     @Test
     @DisplayName("Control that setID returns right ID")
@@ -29,13 +38,6 @@ class EmployeeTest {
         
     }
 
-    @Test
-    @DisplayName("Control that getSalary returns right salary")
-    void controlThatGetSalaryReturnsRightSalary() {
-        var result = employee.getSalary();
-        assertThat(result).isEqualTo(26000);
-        
-    }
 
     @Test
     @DisplayName("Control that setSalary returns right salary")
@@ -49,22 +51,16 @@ class EmployeeTest {
     @DisplayName("check if the employee got paid")
     void checkIfTheEmployeeGotPaid() {
         employee.setPaid(true);
-        boolean result = employee.isPaid();
+        var result = employee.isPaid();
         assertThat(result).isTrue();
 
     }
-    @Test
-    @DisplayName("check if employee not got paid")
-    void controlThatGetPaidReturnsRightPaid() {
-        boolean result = employee.isPaid();
-        assertThat(result).isFalse();
 
-    }
 
     @Test
     @DisplayName("get information about the employee")
     void getInformationAboutTheEmployee() {
-        String result = employee.toString();
+        var result = employee.toString();
         assertThat(result).isEqualTo("Employee [id=123, salary=26000.0]");
     }
         
