@@ -14,5 +14,14 @@ public class CalculatorTest {
        assertThat(result).isEqualTo(0);
     }
 
+    @Test
+    @DisplayName("Given 1 then return 1")
+    void checkThat1Return1() {
+        int result = Calculator.add("1");
+        assertThat(result).isEqualTo(1);
+
+
+        
+    }
 
 }
