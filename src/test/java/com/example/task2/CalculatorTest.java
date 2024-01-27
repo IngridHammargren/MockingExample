@@ -19,9 +19,14 @@ public class CalculatorTest {
     void checkThat1Return1() {
         int result = Calculator.add("1");
         assertThat(result).isEqualTo(1);
-
-
         
+    }
+
+    @Test
+    @DisplayName("Given 1 and 2 and then return 3")
+    void given1And2AndThenReturn3() {
+        int result = Calculator.add ("1, 2");
+        assertThat(result).isEqualTo(3);
     }
 
 }

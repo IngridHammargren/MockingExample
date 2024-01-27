@@ -8,8 +8,15 @@ public class Calculator {
         if(numbers.isEmpty()){
             return 0;
         }
+        String[]numArray =numbers.split(", ");
+        int sum = 0;
 
-        return Integer.parseInt(numbers);
+        for (String num: numArray){
+            sum += Integer.parseInt(num);
+        }
+        return sum;
+
+
         }
 
 
