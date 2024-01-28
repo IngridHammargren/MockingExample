@@ -74,4 +74,13 @@ public class CalculatorTest {
 
     }
 
+    @Test
+    @DisplayName("Ignore Number above 1000")
+    void ignoreNumberAbove1000() {
+        int result =Calculator.add("2,1001");
+        assertThat(result).isEqualTo(2);
+
+        
+    }
+
 }
