@@ -62,6 +62,15 @@ public class CalculatorTest {
         });
         assertThat(exception.getMessage()).isEqualTo("negatives not allowed -1");
 
+    }
+
+    @Test
+    @DisplayName("Assert That It Throw Exception For Multiple Negative Numbers")
+    void assertThatItThrowExceptionForMultipleNegativeNumbers() {
+        IllegalArgumentException exception= assertThrows(IllegalArgumentException.class, ()->{
+            Calculator.add("-1,2,3,-4");
+        }); assertThat(exception.getMessage()).isEqualTo("negatives not allowed -1,-4");
+
 
     }
 
