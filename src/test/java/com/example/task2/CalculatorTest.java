@@ -37,4 +37,12 @@ public class CalculatorTest {
 
     }
 
+    @Test
+    @DisplayName("Return Sum of Multiple Numbers With new Line")
+    void returnSumOfMultipleNumbersWithNewLine() {
+        int result = Calculator.add("1\n2,3");
+        assertThat(result).isEqualTo(6);
+        
+    }
+
 }
