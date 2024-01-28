@@ -3,15 +3,17 @@ package com.example.task2;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CalculatorTest {
 
     @Test
     @DisplayName("empty String Should Result in Zero")
     void emptyStringShouldResultInZero() {
-       int result = Calculator.add("");
-       assertThat(result).isEqualTo(0);
+        int result = Calculator.add("");
+        assertThat(result).isEqualTo(0);
     }
 
     @Test
@@ -19,13 +21,13 @@ public class CalculatorTest {
     void checkThat1Return1() {
         int result = Calculator.add("1");
         assertThat(result).isEqualTo(1);
-        
+
     }
 
     @Test
     @DisplayName("Given 1 and 2 and then return 3")
     void given1And2AndThenReturn3() {
-        int result = Calculator.add ("1,2");
+        int result = Calculator.add("1,2");
         assertThat(result).isEqualTo(3);
     }
 
@@ -42,14 +44,25 @@ public class CalculatorTest {
     void returnSumOfMultipleNumbersWithNewLine() {
         int result = Calculator.add("1\n2,3");
         assertThat(result).isEqualTo(6);
-        
+
     }
 
     @Test
     @DisplayName("Assert That It Support Custom Delimiters")
     void customDelimiterAndMultipleNumbers() {
-        int result = Calculator.add ("//;\n1;2");
+        int result = Calculator.add("//;\n1;2");
         assertThat(result).isEqualTo(3);
+    }
+
+    @Test
+    @DisplayName("Assert That It Throw Exception For Negative Numbers")
+    void assertThatItThrowExceptionForNegativeNumbers() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            Calculator.add("-1");
+        });
+        assertThat(exception.getMessage()).isEqualTo("negatives not allowed -1");
+
+
     }
 
 }

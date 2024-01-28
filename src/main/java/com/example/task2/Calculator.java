@@ -19,14 +19,16 @@ public class Calculator {
 
             String[] numArray = numbers.split(delimiter);
 
-            if (numbers.contains(",\n")) {
-                throw new IllegalArgumentException("Invalid input, needs a new line after comma");
-            }
 
             int sum = 0;
 
             for (String num : numArray) {
-                sum += Integer.parseInt(num);
+                int parseNum = Integer.parseInt(num);
+                if(parseNum<0){
+                    throw new IllegalArgumentException("negatives not allowed "+num);
+                }
+                sum += parseNum;
+
             }
             return sum;
 
