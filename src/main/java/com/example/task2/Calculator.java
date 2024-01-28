@@ -8,7 +8,7 @@ public class Calculator {
         if(numbers.isEmpty()){
             return 0;
         }
-        String[]numArray =numbers.split(", ");
+        String[]numArray =numbers.split(",");
         int sum = 0;
 
         for (String num: numArray){
