@@ -45,4 +45,11 @@ public class CalculatorTest {
         
     }
 
+    @Test
+    @DisplayName("Assert That It Support Custom Delimiters")
+    void customDelimiterAndMultipleNumbers() {
+        int result = Calculator.add ("//;\n1;2");
+        assertThat(result).isEqualTo(3);
+    }
+
 }
