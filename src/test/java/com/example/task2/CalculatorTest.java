@@ -92,6 +92,13 @@ public class CalculatorTest {
         
     }
 
+    @Test
+    @DisplayName("Allow Multiple Delimiters and return sum")
+    void allowMultipleDelimitersAndReturnSum() {
+        int result = Calculator.add("//[*][%]\n1*2%3");
+        assertThat(result).isEqualTo(6);
+    }
+
 
 
 }
