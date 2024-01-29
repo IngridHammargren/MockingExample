@@ -99,6 +99,12 @@ public class CalculatorTest {
         assertThat(result).isEqualTo(6);
     }
 
+    @Test
+    @DisplayName("Multiple delimiters with length longer than one char and return sum ")
+    void allowMultipleDelimitersWithLengthLongerThanOneChar() {
+        int result = Calculator.add("//[***][%%%%%]\n***2%%%%3");
+
+    }
 
 
 }
