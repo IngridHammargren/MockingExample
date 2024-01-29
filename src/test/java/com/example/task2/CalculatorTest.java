@@ -83,4 +83,15 @@ public class CalculatorTest {
         
     }
 
+    @Test
+    @DisplayName("Check Different Delimiters of any length")
+    void checkDifferentDelimitersOfAnyLength() {
+        int result = Calculator.add("//[***]\n1***2***3");
+        assertThat(result).isEqualTo(6);
+
+        
+    }
+
+
+
 }
